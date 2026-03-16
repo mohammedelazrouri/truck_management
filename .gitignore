@@ -1,0 +1,14 @@
+﻿# Ignore dependencies
+vendor/
+
+# Ignore local config
+config/db.php
+config/app.php
+
+# Ignore editor temp files
+*.log
+*.tmp
+*.cache
+# Ignore OS files
+.DS_Store
+Thumbs.db
