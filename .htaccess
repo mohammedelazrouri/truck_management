@@ -1,0 +1,8 @@
+# disable directory browsing and set default index files for the entire project
+Options -Indexes
+DirectoryIndex index.php index.html
+
+# optional: restrict access to php files unless routed through index.php
+#<FilesMatch "\.(php|htaccess)$">
+#    Require all denied
+#</FilesMatch>

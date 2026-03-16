@@ -1,0 +1,104 @@
+// Main SCSS file importing partials
+
+@import 'variables';
+@import 'mixins';
+
+// Base reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: $bg-secondary;
+  color: $text-primary;
+  line-height: 1.6;
+}
+
+// Navigation
+.admin-nav {
+  background: $bg-primary;
+  box-shadow: $shadow-md;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $spacing-lg $spacing-xl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-xl;
+  }
+
+  .nav-logo {
+    color: $text-white;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: $spacing-2xl;
+
+    a {
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: $spacing-md 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease;
+
+      &.active,
+      &:hover {
+        color: $text-white;
+        border-bottom-color: $color-primary;
+      }
+    }
+  }
+}
+
+// Buttons
+.btn {
+  @include button-base;
+  &-primary {
+    background: $color-primary;
+    color: $text-white;
+    &:hover { background: $color-primary-dark; }
+  }
+  &-secondary {
+    background: $bg-tertiary;
+    color: $text-primary;
+    &:hover { background: $border-light; color: $color-primary; }
+  }
+  &-danger { background: $color-danger; color: $text-white; }
+  &-success { background: $color-success; color: $text-white; }
+  &-outline {
+    background: transparent;
+    border: 1.5px solid $color-primary;
+    color: $color-primary;
+    &:hover { background: $color-primary-light; }
+  }
+}
+
+// Utility classes
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: $spacing-2xl $spacing-xl;
+}
+
+@include respond(tablet) {
+  .container { padding: $spacing-xl $spacing-lg; }
+}
+
